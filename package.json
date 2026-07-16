@@ -1,0 +1,20 @@
+{
+  "name": "ayoa-mcp-server",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Standalone MCP server exposing Ayoa mindmapping services",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "verify:mcp": "bash scripts/verify-mcp-tools.sh",
+    "inspector": "npx @modelcontextprotocol/inspector node server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "puppeteer-core": "^24.15.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/inspector": "^0.22.0"
+  }
+}
