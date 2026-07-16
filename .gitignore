@@ -8,6 +8,8 @@ cookies*.json
 *cookie*.json
 *.mp4
 *.png
+!test/fixtures/*.png
 storage/
 .tmp/
 .DS_Store
+coverage/

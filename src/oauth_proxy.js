@@ -15,10 +15,6 @@ import { createHash, randomBytes, randomUUID, timingSafeEqual } from 'node:crypt
 function b64url(buf) {
   return Buffer.from(buf).toString('base64').replace(/=+$/, '').replace(/\+/g, '-').replace(/\//g, '_');
 }
-function b64urlDecode(str) {
-  const pad = (4 - (str.length % 4)) % 4;
-  return Buffer.from(str.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat(pad), 'base64');
-}
 function sha256B64Url(verifier) {
   return b64url(createHash('sha256').update(verifier).digest());
 }

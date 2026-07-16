@@ -2,10 +2,11 @@
   "name": "ayoa-mcp-server",
   "version": "0.2.0",
   "private": true,
-  "description": "Standalone MCP server exposing Ayoa mindmapping services",
+  "description": "Standalone Node.js MCP server exposing Ayoa mindmapping services",
   "type": "module",
   "scripts": {
     "test": "node --test test/*.test.js",
+    "test:coverage": "c8 --check-coverage --lines 90 --functions 90 --branches 80 --reporter=text --reporter=lcov --include='server.js' --include='tools.js' --include='src/**' --exclude='ayoa-client.js' --exclude='**/test/**' --exclude='**/scripts/**' --exclude='**/node_modules/**' node --test test/*.test.js",
     "verify:mcp": "bash scripts/verify-mcp-tools.sh",
     "inspector": "npx @modelcontextprotocol/inspector node server.js"
   },
@@ -15,6 +16,7 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
-    "@modelcontextprotocol/inspector": "^0.22.0"
+    "@modelcontextprotocol/inspector": "^0.22.0",
+    "c8": "^12.0.0"
   }
 }
